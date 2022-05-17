@@ -29,16 +29,10 @@ void Foog::update(sf::Time & elapsed)
 		sf::FloatRect bounds = sprite_.getGlobalBounds();
 
 		float laserX = x + bounds.width;
-		float laserY = y + (bounds.height / 1.41f);
+		float laserY = y + (bounds.height / 1.51f);
 
 		LaserPtr laser = std::make_shared<Laser>(sf::Vector2f(laserX, laserY));
 		GAME.getCurrentScene().addGameObject(laser);
-			
-		float laserX1 = x + bounds.width;
-		float laserY1 =  y + (bounds.height / 5.51f);
-
-		LaserPtr laser1 = std::make_shared<Laser>(sf::Vector2f(laserX1, laserY1));
-		GAME.getCurrentScene().addGameObject(laser1);
 	}
 }
 
